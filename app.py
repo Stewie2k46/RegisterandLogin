@@ -21,7 +21,7 @@ def register():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        hashed_password = generate_password_hash(password, method='sha256')
+        hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
 
         conn = get_db_connection()
         cursor = conn.cursor()
@@ -61,4 +61,4 @@ def login():
     return render_template('login.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
