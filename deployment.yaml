@@ -27,6 +27,6 @@ spec:
         - name: DB_NAME
           value: "my-flask-db"
         - name: DB_USER
-          value: "your_username"
+          value: "admin"
         - name: DB_PASSWORD
-          value: "your_password"
+          value: "qwertyuiop"
